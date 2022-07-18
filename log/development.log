@@ -5132,3 +5132,119 @@ Processing by StatesController#edit as HTML
 Completed 200 OK in 16ms (Views: 13.5ms | ActiveRecord: 0.2ms | Allocations: 5847)
 
 
+Started GET "/" for 127.0.0.1 at 2022-07-18 23:01:29 +0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StatesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:4
+  Rendered states/index.erb within layouts/application (Duration: 5.0ms | Allocations: 4997)
+  Rendered layout layouts/application.html.erb (Duration: 130.0ms | Allocations: 76049)
+Completed 200 OK in 136ms (Views: 131.7ms | ActiveRecord: 0.4ms | Allocations: 80299)
+
+
+Started GET "/states/new" for 127.0.0.1 at 2022-07-18 23:01:30 +0300
+Processing by StatesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.erb within layouts/application
+  Rendered states/new.erb within layouts/application (Duration: 8.2ms | Allocations: 2949)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 6800)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.0ms | Allocations: 7284)
+
+
+Started POST "/states" for 127.0.0.1 at 2022-07-18 23:04:17 +0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StatesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "state"=>{"body"=>"asdfasdf", "author"=>"asdfasdf"}, "commit"=>"Создать"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/states_controller.rb:5:in `create'
+  [1m[36mState Create (0.2ms)[0m  [1m[32mINSERT INTO "states" ("body", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "asdfasdf"], ["author", "asdfasdf"], ["created_at", "2022-07-18 20:04:17.783015"], ["updated_at", "2022-07-18 20:04:17.783015"]]
+  ↳ app/controllers/states_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (12.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/states_controller.rb:5:in `create'
+Redirected to http://localhost:3000/states.22
+Completed 302 Found in 32ms (ActiveRecord: 13.3ms | Allocations: 9678)
+
+
+Started GET "/states.22" for 127.0.0.1 at 2022-07-18 23:04:17 +0300
+Processing by StatesController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:4
+  Rendered states/index.erb within layouts/application (Duration: 1.6ms | Allocations: 1419)
+  Rendered layout layouts/application.html.erb (Duration: 85.7ms | Allocations: 46374)
+Completed 200 OK in 89ms (Views: 87.2ms | ActiveRecord: 0.1ms | Allocations: 48661)
+
+
+Started GET "/states.22" for 127.0.0.1 at 2022-07-18 23:04:17 +0300
+Processing by StatesController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:4
+  Rendered states/index.erb within layouts/application (Duration: 0.8ms | Allocations: 683)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 4574)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.1ms | Allocations: 4889)
+
+
+Started GET "/states.22" for 127.0.0.1 at 2022-07-18 23:10:12 +0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StatesController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:4
+  Rendered states/index.erb within layouts/application (Duration: 5.0ms | Allocations: 5028)
+  Rendered layout layouts/application.html.erb (Duration: 158.6ms | Allocations: 77123)
+Completed 200 OK in 164ms (Views: 159.7ms | ActiveRecord: 0.4ms | Allocations: 81447)
+
+
+Started GET "/states/new" for 127.0.0.1 at 2022-07-18 23:10:14 +0300
+Processing by StatesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.erb within layouts/application
+  Rendered states/new.erb within layouts/application (Duration: 5.0ms | Allocations: 2952)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 6803)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.0ms | Allocations: 7288)
+
+
+Started POST "/states" for 127.0.0.1 at 2022-07-18 23:10:19 +0300
+Processing by StatesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "state"=>{"body"=>"falskdfjaslkdfj", "author"=>"fasdf"}, "commit"=>"Создать"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/states_controller.rb:5:in `create'
+  [1m[36mState Create (0.4ms)[0m  [1m[32mINSERT INTO "states" ("body", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "falskdfjaslkdfj"], ["author", "fasdf"], ["created_at", "2022-07-18 20:10:19.791148"], ["updated_at", "2022-07-18 20:10:19.791148"]]
+  ↳ app/controllers/states_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (14.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/states_controller.rb:5:in `create'
+Redirected to http://localhost:3000/states.23
+Completed 302 Found in 23ms (ActiveRecord: 14.9ms | Allocations: 3705)
+
+
+Started GET "/states.23" for 127.0.0.1 at 2022-07-18 23:10:19 +0300
+Processing by StatesController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:4
+  Rendered states/index.erb within layouts/application (Duration: 2.0ms | Allocations: 763)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 4763)
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.2ms | Allocations: 5082)
+
+
+Started GET "/states.23" for 127.0.0.1 at 2022-07-18 23:10:19 +0300
+Processing by StatesController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:4
+  Rendered states/index.erb within layouts/application (Duration: 1.4ms | Allocations: 716)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 4599)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.1ms | Allocations: 4871)
+
+
