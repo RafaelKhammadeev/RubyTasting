@@ -1,29 +1,23 @@
 class StatesController < ApplicationController
-  skip_before_action :verify_authenticity_token
+  before_action :set_state, only: %i[update show destroy edit]
 
   def create
-    State.create(
-      body: params[:state][:body],
-      author: params[:state][:author]
-    )
-    riderect_to states_path
+    state = State.create(state_params)
+    redirect_to states_path(state)
   end
 
   def update
-    @state = State.find(params[:id])
-    @state.update(
-      body: params[:state][:body],
-      author: params[:state][:author]
-    )
+    @state.update(state_params)
+    redirect_to states_path(@state)
   end
 
   def destroy
-    @state = State.find(params[:id])
     @state.destroy
+
+    redirect_to states_path(@state)
   end
 
   def show
-    @state = State.find(params[:id])
   end
 
   def index
@@ -31,5 +25,19 @@ class StatesController < ApplicationController
   end
 
   def new
+    @state = State.new
+  end
+
+  def edit
+  end
+
+  private
+
+  def state_params
+    params.require(:state).permit(:body, :author)
+  end
+
+  def set_state
+    @state = State.find(params[:id])
   end
 end
