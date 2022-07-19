@@ -10,14 +10,18 @@
   margin-top: 1.75rem;
 }
 
+.mb-little {
+  margin-bottom: 0.2rem;
+}
+
 .mb-sm {
   margin-bottom: 0.6rem;
 }
 
-.mи, .mt-md {
+.mb, .mt-md {
   margin-bottom: 1rem;
 }
 
-.mи-lg {
+.mb-lg {
   margin-bottom: 1.75rem;
 }

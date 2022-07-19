@@ -4,8 +4,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    users_params = params.require(:users).permit(:name, :nickname, :email)
-    User.create(users_params)
+    debugger
+    user_params = params.require(:user).permit(:name, :nickname, :email)
+    User.create(user_params)
     redirect_to root_path
   end
 end
