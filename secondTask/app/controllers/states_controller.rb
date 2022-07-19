@@ -3,12 +3,14 @@ class StatesController < ApplicationController
 
   def create
     state = State.create(state_params)
+
     redirect_to states_path(state)
   end
 
   def update
     @state.update(state_params)
     redirect_to states_path(@state)
+    # в дагонку с redirect_to можно передать сообщение с помощью flash
   end
 
   def destroy
@@ -21,6 +23,7 @@ class StatesController < ApplicationController
   end
 
   def index
+    @state = State.new
     @states = State.all
   end
 

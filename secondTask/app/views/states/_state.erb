@@ -1,0 +1,23 @@
+<div class="mb-sm">
+  <!--state - локальная переменная в этом паршале-->
+  <%= state.body%>
+</div>
+
+<div class="text-sm state-footer">
+  <div>
+    <p class="text-dark-grey"><%= "Автор: '#{state.author}'" %></p>
+    <p class="text-grey"><%= l(state.created_at, format: :short) %></p>
+  </div>
+
+  <div>
+    <p class="mt">
+      <%= link_to "Изменить статью", edit_state_path(state),
+                  class:'button button-main' %>
+    </p>
+
+    <div >
+      <%= button_to 'Удалить статью', state_path(state), method: :delete,
+                    class:'button button-main' %>
+    </div>
+  </div>
+</div>

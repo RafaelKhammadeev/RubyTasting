@@ -5248,3 +5248,1216 @@ Processing by StatesController#index as */*
 Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.1ms | Allocations: 4871)
 
 
+Started GET "/states.23" for 127.0.0.1 at 2022-07-18 23:23:25 +0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StatesController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:4
+  Rendered states/index.erb within layouts/application (Duration: 5.1ms | Allocations: 5061)
+  Rendered layout layouts/application.html.erb (Duration: 173.7ms | Allocations: 77404)
+Completed 200 OK in 179ms (Views: 174.7ms | ActiveRecord: 0.5ms | Allocations: 81727)
+
+
+Started GET "/states/%2022" for 127.0.0.1 at 2022-07-18 23:23:28 +0300
+Processing by StatesController#show as HTML
+  Parameters: {"id"=>" 22"}
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:41:in `set_state'
+  Rendering layout layouts/application.html.erb
+  Rendering states/show.erb within layouts/application
+  Rendered states/show.erb within layouts/application (Duration: 2.4ms | Allocations: 921)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 4745)
+Completed 200 OK in 20ms (Views: 10.5ms | ActiveRecord: 0.3ms | Allocations: 7564)
+
+
+Started GET "/states/%2022" for 127.0.0.1 at 2022-07-18 23:23:31 +0300
+Processing by StatesController#show as HTML
+  Parameters: {"id"=>" 22"}
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:41:in `set_state'
+  Rendering layout layouts/application.html.erb
+  Rendering states/show.erb within layouts/application
+  Rendered states/show.erb within layouts/application (Duration: 1.2ms | Allocations: 516)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 4234)
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.1ms | Allocations: 5012)
+
+
+Started GET "/states/22/edit" for 127.0.0.1 at 2022-07-18 23:23:32 +0300
+Processing by StatesController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:41:in `set_state'
+  Rendering layout layouts/application.html.erb
+  Rendering states/edit.erb within layouts/application
+  Rendered states/edit.erb within layouts/application (Duration: 9.2ms | Allocations: 3009)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 6848)
+Completed 200 OK in 18ms (Views: 16.0ms | ActiveRecord: 0.1ms | Allocations: 7700)
+
+
+Started GET "/states/22/edit" for 127.0.0.1 at 2022-07-18 23:23:35 +0300
+Processing by StatesController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:41:in `set_state'
+  Rendering layout layouts/application.html.erb
+  Rendering states/edit.erb within layouts/application
+  Rendered states/edit.erb within layouts/application (Duration: 1.9ms | Allocations: 924)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 4643)
+Completed 200 OK in 10ms (Views: 7.6ms | ActiveRecord: 0.2ms | Allocations: 5509)
+
+
+Started PATCH "/states/22" for 127.0.0.1 at 2022-07-18 23:23:42 +0300
+Processing by StatesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "state"=>{"body"=>"asdfasdf", "author"=>"Rafaek"}, "commit"=>"Сохранить", "id"=>"22"}
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:41:in `set_state'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/states_controller.rb:10:in `update'
+  [1m[36mState Update (0.2ms)[0m  [1m[33mUPDATE "states" SET "author" = ?, "updated_at" = ? WHERE "states"."id" = ?[0m  [["author", "Rafaek"], ["updated_at", "2022-07-18 20:23:42.416292"], ["id", 22]]
+  ↳ app/controllers/states_controller.rb:10:in `update'
+  [1m[36mTRANSACTION (12.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/states_controller.rb:10:in `update'
+Redirected to http://localhost:3000/states.22
+Completed 302 Found in 17ms (ActiveRecord: 12.9ms | Allocations: 4254)
+
+
+Started GET "/states.22" for 127.0.0.1 at 2022-07-18 23:23:42 +0300
+Processing by StatesController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:4
+  Rendered states/index.erb within layouts/application (Duration: 1.9ms | Allocations: 756)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 4757)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.2ms | Allocations: 5072)
+
+
+Started GET "/states.22" for 127.0.0.1 at 2022-07-18 23:23:42 +0300
+Processing by StatesController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:4
+  Rendered states/index.erb within layouts/application (Duration: 1.9ms | Allocations: 716)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 4608)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.1ms | Allocations: 4880)
+
+
+Started GET "/states/%2022" for 127.0.0.1 at 2022-07-18 23:23:44 +0300
+Processing by StatesController#show as HTML
+  Parameters: {"id"=>" 22"}
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:41:in `set_state'
+  Rendering layout layouts/application.html.erb
+  Rendering states/show.erb within layouts/application
+  Rendered states/show.erb within layouts/application (Duration: 1.2ms | Allocations: 515)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 4233)
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.1ms | Allocations: 4987)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-19 13:14:35 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StatesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:4
+  Rendered states/index.erb within layouts/application (Duration: 11.4ms | Allocations: 5060)
+  Rendered layout layouts/application.html.erb (Duration: 84.9ms | Allocations: 50035)
+Completed 200 OK in 98ms (Views: 87.1ms | ActiveRecord: 0.8ms | Allocations: 54244)
+
+
+Started GET "/states/new" for 127.0.0.1 at 2022-07-19 13:21:30 +0300
+Processing by StatesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.erb within layouts/application
+  Rendered states/_form.erb (Duration: 23.8ms | Allocations: 11554)
+  Rendered states/new.erb within layouts/application (Duration: 25.2ms | Allocations: 11889)
+  Rendered layout layouts/application.html.erb (Duration: 29.5ms | Allocations: 16036)
+Completed 200 OK in 34ms (Views: 31.9ms | Allocations: 16961)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-19 13:21:37 +0300
+Processing by StatesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/states/index.erb:4
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:4
+  Rendered states/index.erb within layouts/application (Duration: 3.6ms | Allocations: 1680)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 5586)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.5ms | Allocations: 5990)
+
+
+Started GET "/states/new" for 127.0.0.1 at 2022-07-19 13:21:39 +0300
+Processing by StatesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.erb within layouts/application
+  Rendered states/_form.erb (Duration: 2.5ms | Allocations: 867)
+  Rendered states/new.erb within layouts/application (Duration: 3.0ms | Allocations: 952)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 4678)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.0ms | Allocations: 4974)
+
+
+Started GET "/states/%2021" for 127.0.0.1 at 2022-07-19 13:21:49 +0300
+Processing by StatesController#show as HTML
+  Parameters: {"id"=>" 21"}
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:41:in `set_state'
+  Rendering layout layouts/application.html.erb
+  Rendering states/show.erb within layouts/application
+  Rendered states/show.erb within layouts/application (Duration: 1.7ms | Allocations: 899)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 4722)
+Completed 200 OK in 20ms (Views: 5.7ms | ActiveRecord: 0.2ms | Allocations: 7511)
+
+
+Started GET "/states/21/edit" for 127.0.0.1 at 2022-07-19 13:22:39 +0300
+Processing by StatesController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:41:in `set_state'
+  Rendering layout layouts/application.html.erb
+  Rendering states/edit.erb within layouts/application
+  Rendered states/_form.erb (Duration: 4.1ms | Allocations: 1327)
+  Rendered states/edit.erb within layouts/application (Duration: 5.7ms | Allocations: 1650)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 5742)
+Completed 200 OK in 21ms (Views: 17.8ms | ActiveRecord: 0.1ms | Allocations: 7071)
+
+
+Started GET "/states/21/edit" for 127.0.0.1 at 2022-07-19 13:22:41 +0300
+Processing by StatesController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:41:in `set_state'
+  Rendering layout layouts/application.html.erb
+  Rendering states/edit.erb within layouts/application
+  Rendered states/_form.erb (Duration: 3.4ms | Allocations: 878)
+  Rendered states/edit.erb within layouts/application (Duration: 3.9ms | Allocations: 961)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 4678)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 0.1ms | Allocations: 5504)
+
+
+Started GET "/states/%2021" for 127.0.0.1 at 2022-07-19 13:25:52 +0300
+Processing by StatesController#show as HTML
+  Parameters: {"id"=>" 21"}
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:41:in `set_state'
+  Rendering layout layouts/application.html.erb
+  Rendering states/show.erb within layouts/application
+  Rendered states/show.erb within layouts/application (Duration: 3.0ms | Allocations: 886)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 4979)
+Completed 200 OK in 19ms (Views: 14.9ms | ActiveRecord: 0.2ms | Allocations: 6312)
+
+
+Started GET "/states/21/edit" for 127.0.0.1 at 2022-07-19 13:25:54 +0300
+Processing by StatesController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:41:in `set_state'
+  Rendering layout layouts/application.html.erb
+  Rendering states/edit.erb within layouts/application
+  Rendered states/_form.erb (Duration: 38.7ms | Allocations: 13426)
+  Rendered states/edit.erb within layouts/application (Duration: 40.0ms | Allocations: 13726)
+  Rendered layout layouts/application.html.erb (Duration: 40.4ms | Allocations: 13815)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 0.2ms | Allocations: 14705)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `state' for #<ActionView::Base:0x0000000000bb80>
+
+'.freeze;@output_buffer.append=  form_with model: state do |form|@output_buffer.safe_append='
+                                                  ^^^^^
+Did you mean?  @state):
+    1: <!--создали с помощью form_with-->
+    2: <%= form_with model: state do |form|%>
+    3:   <p><%= form.label :body, "Текст статьи"%></p>
+    4:   <p class="mt"><%= form.text_area :body, rows: 5, class: 'form-text-area' %></p>
+    5: 
+  
+app/views/states/_form.erb:2
+app/views/states/edit.erb:5
+Started GET "/states/%2021" for 127.0.0.1 at 2022-07-19 13:25:57 +0300
+Processing by StatesController#show as HTML
+  Parameters: {"id"=>" 21"}
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:41:in `set_state'
+  Rendering layout layouts/application.html.erb
+  Rendering states/show.erb within layouts/application
+  Rendered states/show.erb within layouts/application (Duration: 1.4ms | Allocations: 610)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 4438)
+Completed 200 OK in 10ms (Views: 7.5ms | ActiveRecord: 0.1ms | Allocations: 5303)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-19 13:25:58 +0300
+Processing by StatesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:4
+  Rendered states/index.erb within layouts/application (Duration: 3.0ms | Allocations: 937)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 4826)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.2ms | Allocations: 5158)
+
+
+Started GET "/states/new" for 127.0.0.1 at 2022-07-19 13:25:59 +0300
+Processing by StatesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering states/new.erb within layouts/application
+  Rendered states/_form.erb (Duration: 1.3ms | Allocations: 1143)
+  Rendered states/new.erb within layouts/application (Duration: 1.8ms | Allocations: 1367)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 5092)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 5428)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-19 13:29:26 +0300
+Processing by StatesController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/states_controller.rb:24:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:4
+  Rendered states/_form.erb (Duration: 3.5ms | Allocations: 1232)
+  Rendered states/index.erb within layouts/application (Duration: 5.4ms | Allocations: 2549)
+  Rendered layout layouts/application.html.erb (Duration: 21.5ms | Allocations: 20477)
+Completed 200 OK in 27ms (Views: 22.7ms | ActiveRecord: 0.7ms | Allocations: 24313)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-19 13:38:58 +0300
+Processing by StatesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/states/index.erb:4
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:4
+  Rendered states/_form.erb (Duration: 3.2ms | Allocations: 1167)
+  Rendered states/index.erb within layouts/application (Duration: 9.4ms | Allocations: 3064)
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | Allocations: 7167)
+Completed 200 OK in 20ms (Views: 18.4ms | ActiveRecord: 0.6ms | Allocations: 8037)
+
+
+Started GET "/states/%2021" for 127.0.0.1 at 2022-07-19 13:39:00 +0300
+Processing by StatesController#show as HTML
+  Parameters: {"id"=>" 21"}
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:42:in `set_state'
+  Rendering layout layouts/application.html.erb
+  Rendering states/show.erb within layouts/application
+  Rendered states/show.erb within layouts/application (Duration: 1.2ms | Allocations: 1107)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | Allocations: 1196)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms | Allocations: 2676)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="container">
+  <h2 class="title-lg mb">Статья <%=@state.id %></h2>
+
+  <%= render "state", state @state %>
+
+  <p class="mt"><%= link_to "Все статьи", states_path, class:'button button-main' %></p>
+</div>
+
+
+):
+1:    <div class="container">
+2:      <h2 class="title-lg mb">Статья <%=@state.id %></h2>
+3:    
+4:      <%= render "state", state @state %>
+5:    
+6:      <p class="mt"><%= link_to "Все статьи", states_path, class:'button button-main' %></p>
+7:    </div>
+  
+app/views/states/show.erb:4: syntax error, unexpected instance variable, expecting `do' or '{' or '('
+app/views/states/show.erb:4: syntax error, unexpected instance variable, expecting `do' or '{' or '('
+app/views/states/show.erb:4: syntax error, unexpected instance variable, expecting `do' or '{' or '('
+app/views/states/show.erb:4: syntax error, unexpected instance variable, expecting `do' or '{' or '('
+app/views/states/show.erb:4: syntax error, unexpected instance variable, expecting `do' or '{' or '('
+app/views/states/show.erb:4: syntax error, unexpected instance variable, expecting `do' or '{' or '('
+Started GET "/states/%2021" for 127.0.0.1 at 2022-07-19 13:40:05 +0300
+Processing by StatesController#show as HTML
+  Parameters: {"id"=>" 21"}
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:42:in `set_state'
+  Rendering layout layouts/application.html.erb
+  Rendering states/show.erb within layouts/application
+  Rendered states/_state.erb (Duration: 2.8ms | Allocations: 1022)
+  Rendered states/show.erb within layouts/application (Duration: 4.2ms | Allocations: 1412)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 5517)
+Completed 200 OK in 17ms (Views: 14.6ms | ActiveRecord: 0.2ms | Allocations: 6828)
+
+
+Started GET "/states/%2021" for 127.0.0.1 at 2022-07-19 13:41:04 +0300
+Processing by StatesController#show as HTML
+  Parameters: {"id"=>" 21"}
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:42:in `set_state'
+  Rendering layout layouts/application.html.erb
+  Rendering states/show.erb within layouts/application
+  Rendered states/_state.erb (Duration: 2.7ms | Allocations: 916)
+  Rendered states/show.erb within layouts/application (Duration: 4.1ms | Allocations: 1302)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 5395)
+Completed 200 OK in 13ms (Views: 10.8ms | ActiveRecord: 0.1ms | Allocations: 6787)
+
+
+Started GET "/states/%2021" for 127.0.0.1 at 2022-07-19 13:42:06 +0300
+Processing by StatesController#show as HTML
+  Parameters: {"id"=>" 21"}
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:42:in `set_state'
+  Rendering layout layouts/application.html.erb
+  Rendering states/show.erb within layouts/application
+  Rendered states/_state.erb (Duration: 2.4ms | Allocations: 923)
+  Rendered states/show.erb within layouts/application (Duration: 4.0ms | Allocations: 1309)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 5402)
+Completed 200 OK in 16ms (Views: 13.5ms | ActiveRecord: 0.1ms | Allocations: 6794)
+
+
+Started GET "/states/%2021" for 127.0.0.1 at 2022-07-19 13:42:27 +0300
+Processing by StatesController#show as HTML
+  Parameters: {"id"=>" 21"}
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:42:in `set_state'
+  Rendering layout layouts/application.html.erb
+  Rendering states/show.erb within layouts/application
+  Rendered states/_state.erb (Duration: 2.0ms | Allocations: 913)
+  Rendered states/show.erb within layouts/application (Duration: 3.7ms | Allocations: 1299)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 5392)
+Completed 200 OK in 17ms (Views: 12.6ms | ActiveRecord: 0.2ms | Allocations: 6784)
+
+
+Started GET "/states/%2021" for 127.0.0.1 at 2022-07-19 13:42:43 +0300
+Processing by StatesController#show as HTML
+  Parameters: {"id"=>" 21"}
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:42:in `set_state'
+  Rendering layout layouts/application.html.erb
+  Rendering states/show.erb within layouts/application
+  Rendered states/_state.erb (Duration: 2.8ms | Allocations: 904)
+  Rendered states/show.erb within layouts/application (Duration: 4.2ms | Allocations: 1290)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 5383)
+Completed 200 OK in 16ms (Views: 13.2ms | ActiveRecord: 0.1ms | Allocations: 6775)
+
+
+Started GET "/" for 127.0.0.1 at 2022-07-19 13:42:51 +0300
+Processing by StatesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:4
+  Rendered states/_form.erb (Duration: 3.0ms | Allocations: 1099)
+  Rendered states/index.erb within layouts/application (Duration: 6.4ms | Allocations: 2207)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 5933)
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.2ms | Allocations: 6307)
+
+
+Started GET "/states/%2021" for 127.0.0.1 at 2022-07-19 13:43:19 +0300
+Processing by StatesController#show as HTML
+  Parameters: {"id"=>" 21"}
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:42:in `set_state'
+  Rendering layout layouts/application.html.erb
+  Rendering states/show.erb within layouts/application
+  Rendered states/_state.erb (Duration: 1.8ms | Allocations: 919)
+  Rendered states/show.erb within layouts/application (Duration: 2.7ms | Allocations: 1305)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 5398)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.1ms | Allocations: 6737)
+
+
+Started GET "/states/%2021" for 127.0.0.1 at 2022-07-19 13:48:12 +0300
+Processing by StatesController#show as HTML
+  Parameters: {"id"=>" 21"}
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:42:in `set_state'
+  Rendering layout layouts/application.html.erb
+  Rendering states/show.erb within layouts/application
+  Rendered states/_state.erb (Duration: 3.1ms | Allocations: 927)
+  Rendered states/show.erb within layouts/application (Duration: 4.6ms | Allocations: 1313)
+  Rendered layout layouts/application.html.erb (Duration: 60.1ms | Allocations: 18486)
+Completed 200 OK in 66ms (Views: 62.8ms | ActiveRecord: 0.2ms | Allocations: 19878)
+
+
+Started GET "/states/%2021" for 127.0.0.1 at 2022-07-19 13:48:16 +0300
+Processing by StatesController#show as HTML
+  Parameters: {"id"=>" 21"}
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:42:in `set_state'
+  Rendering layout layouts/application.html.erb
+  Rendering states/show.erb within layouts/application
+  Rendered states/_state.erb (Duration: 0.6ms | Allocations: 527)
+  Rendered states/show.erb within layouts/application (Duration: 0.8ms | Allocations: 649)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 4552)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.1ms | Allocations: 5378)
+
+
+Started GET "/states/%2021" for 127.0.0.1 at 2022-07-19 13:48:28 +0300
+Processing by StatesController#show as HTML
+  Parameters: {"id"=>" 21"}
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:42:in `set_state'
+  Rendering layout layouts/application.html.erb
+  Rendering states/show.erb within layouts/application
+  Rendered states/_state.erb (Duration: 1.3ms | Allocations: 533)
+  Rendered states/show.erb within layouts/application (Duration: 1.8ms | Allocations: 655)
+  Rendered layout layouts/application.html.erb (Duration: 24.9ms | Allocations: 12384)
+Completed 200 OK in 28ms (Views: 26.1ms | ActiveRecord: 0.1ms | Allocations: 13135)
+
+
+Started GET "/states/%2021" for 127.0.0.1 at 2022-07-19 13:48:29 +0300
+Processing by StatesController#show as HTML
+  Parameters: {"id"=>" 21"}
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:42:in `set_state'
+  Rendering layout layouts/application.html.erb
+  Rendering states/show.erb within layouts/application
+  Rendered states/_state.erb (Duration: 0.9ms | Allocations: 533)
+  Rendered states/show.erb within layouts/application (Duration: 1.1ms | Allocations: 655)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 4560)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.1ms | Allocations: 5312)
+
+
+Started GET "/states/%2021" for 127.0.0.1 at 2022-07-19 13:49:09 +0300
+Processing by StatesController#show as HTML
+  Parameters: {"id"=>" 21"}
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:42:in `set_state'
+  Rendering layout layouts/application.html.erb
+  Rendering states/show.erb within layouts/application
+  Rendered states/_state.erb (Duration: 1.5ms | Allocations: 524)
+  Rendered states/show.erb within layouts/application (Duration: 1.9ms | Allocations: 646)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 11277)
+Completed 200 OK in 18ms (Views: 15.9ms | ActiveRecord: 0.1ms | Allocations: 12028)
+
+
+Started GET "/states/%2021" for 127.0.0.1 at 2022-07-19 13:49:22 +0300
+Processing by StatesController#show as HTML
+  Parameters: {"id"=>" 21"}
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:42:in `set_state'
+  Rendering layout layouts/application.html.erb
+  Rendering states/show.erb within layouts/application
+  Rendered states/_state.erb (Duration: 2.9ms | Allocations: 910)
+  Rendered states/show.erb within layouts/application (Duration: 4.8ms | Allocations: 1297)
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 5676)
+Completed 200 OK in 22ms (Views: 19.6ms | ActiveRecord: 0.1ms | Allocations: 6993)
+
+
+Started GET "/states/%2021" for 127.0.0.1 at 2022-07-19 13:49:49 +0300
+Processing by StatesController#show as HTML
+  Parameters: {"id"=>" 21"}
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:42:in `set_state'
+  Rendering layout layouts/application.html.erb
+  Rendering states/show.erb within layouts/application
+  Rendered states/_state.erb (Duration: 2.4ms | Allocations: 919)
+  Rendered states/show.erb within layouts/application (Duration: 4.0ms | Allocations: 1305)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 5584)
+Completed 200 OK in 15ms (Views: 12.8ms | ActiveRecord: 0.1ms | Allocations: 6976)
+
+
+Started GET "/states/%2021" for 127.0.0.1 at 2022-07-19 13:50:10 +0300
+Processing by StatesController#show as HTML
+  Parameters: {"id"=>" 21"}
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:42:in `set_state'
+  Rendering layout layouts/application.html.erb
+  Rendering states/show.erb within layouts/application
+  Rendered states/_state.erb (Duration: 1.5ms | Allocations: 919)
+  Rendered states/show.erb within layouts/application (Duration: 2.5ms | Allocations: 1305)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 5584)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.1ms | Allocations: 6976)
+
+
+Started GET "/states/%2021" for 127.0.0.1 at 2022-07-19 13:51:55 +0300
+Processing by StatesController#show as HTML
+  Parameters: {"id"=>" 21"}
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:42:in `set_state'
+  Rendering layout layouts/application.html.erb
+  Rendering states/show.erb within layouts/application
+  Rendered states/_state.erb (Duration: 2.8ms | Allocations: 935)
+  Rendered states/show.erb within layouts/application (Duration: 4.6ms | Allocations: 1321)
+  Rendered layout layouts/application.html.erb (Duration: 26.7ms | Allocations: 14443)
+Completed 200 OK in 31ms (Views: 28.7ms | ActiveRecord: 0.1ms | Allocations: 15835)
+
+
+Started GET "/states/%2021" for 127.0.0.1 at 2022-07-19 13:52:08 +0300
+Processing by StatesController#show as HTML
+  Parameters: {"id"=>" 21"}
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:42:in `set_state'
+  Rendering layout layouts/application.html.erb
+  Rendering states/show.erb within layouts/application
+  Rendered states/_state.erb (Duration: 1.2ms | Allocations: 938)
+  Rendered states/show.erb within layouts/application (Duration: 1.9ms | Allocations: 1325)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 5620)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.1ms | Allocations: 7013)
+
+
+Started GET "/states/%2021" for 127.0.0.1 at 2022-07-19 13:52:47 +0300
+Processing by StatesController#show as HTML
+  Parameters: {"id"=>" 21"}
+  [1m[36mState Load (0.3ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:42:in `set_state'
+  Rendering layout layouts/application.html.erb
+  Rendering states/show.erb within layouts/application
+  Rendered states/_state.erb (Duration: 3.3ms | Allocations: 920)
+  Rendered states/show.erb within layouts/application (Duration: 4.7ms | Allocations: 1306)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 5595)
+Completed 200 OK in 15ms (Views: 12.9ms | ActiveRecord: 0.3ms | Allocations: 6987)
+
+
+Started GET "/states/%2021" for 127.0.0.1 at 2022-07-19 13:53:59 +0300
+Processing by StatesController#show as HTML
+  Parameters: {"id"=>" 21"}
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:42:in `set_state'
+  Rendering layout layouts/application.html.erb
+  Rendering states/show.erb within layouts/application
+  Rendered states/_state.erb (Duration: 1.2ms | Allocations: 929)
+  Rendered states/show.erb within layouts/application (Duration: 2.0ms | Allocations: 1315)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 5596)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.1ms | Allocations: 6988)
+
+
+Started GET "/states/%2021" for 127.0.0.1 at 2022-07-19 13:54:49 +0300
+Processing by StatesController#show as HTML
+  Parameters: {"id"=>" 21"}
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:42:in `set_state'
+  Rendering layout layouts/application.html.erb
+  Rendering states/show.erb within layouts/application
+  Rendered states/_state.erb (Duration: 2.6ms | Allocations: 941)
+  Rendered states/show.erb within layouts/application (Duration: 4.0ms | Allocations: 1327)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 5608)
+Completed 200 OK in 16ms (Views: 13.8ms | ActiveRecord: 0.1ms | Allocations: 7000)
+
+
+Started GET "/states/%2021" for 127.0.0.1 at 2022-07-19 13:55:34 +0300
+Processing by StatesController#show as HTML
+  Parameters: {"id"=>" 21"}
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:42:in `set_state'
+  Rendering layout layouts/application.html.erb
+  Rendering states/show.erb within layouts/application
+  Rendered states/_state.erb (Duration: 2.7ms | Allocations: 922)
+  Rendered states/show.erb within layouts/application (Duration: 4.4ms | Allocations: 1308)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 5589)
+Completed 200 OK in 16ms (Views: 13.0ms | ActiveRecord: 0.1ms | Allocations: 6981)
+
+
+Started GET "/states/%2021" for 127.0.0.1 at 2022-07-19 13:56:09 +0300
+Processing by StatesController#show as HTML
+  Parameters: {"id"=>" 21"}
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:42:in `set_state'
+  Rendering layout layouts/application.html.erb
+  Rendering states/show.erb within layouts/application
+  Rendered states/_state.erb (Duration: 1.3ms | Allocations: 941)
+  Rendered states/show.erb within layouts/application (Duration: 1.9ms | Allocations: 1327)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 5609)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.1ms | Allocations: 7002)
+
+
+Started GET "/states/%2021" for 127.0.0.1 at 2022-07-19 13:57:34 +0300
+Processing by StatesController#show as HTML
+  Parameters: {"id"=>" 21"}
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:42:in `set_state'
+  Rendering layout layouts/application.html.erb
+  Rendering states/show.erb within layouts/application
+  Rendered states/_state.erb (Duration: 2.8ms | Allocations: 923)
+  Rendered states/show.erb within layouts/application (Duration: 3.9ms | Allocations: 1309)
+  Rendered layout layouts/application.html.erb (Duration: 26.9ms | Allocations: 14816)
+Completed 200 OK in 31ms (Views: 28.6ms | ActiveRecord: 0.2ms | Allocations: 16208)
+
+
+Started GET "/states/%2021" for 127.0.0.1 at 2022-07-19 13:57:52 +0300
+Processing by StatesController#show as HTML
+  Parameters: {"id"=>" 21"}
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:42:in `set_state'
+  Rendering layout layouts/application.html.erb
+  Rendering states/show.erb within layouts/application
+  Rendered states/_state.erb (Duration: 1.3ms | Allocations: 531)
+  Rendered states/show.erb within layouts/application (Duration: 1.7ms | Allocations: 653)
+  Rendered layout layouts/application.html.erb (Duration: 24.3ms | Allocations: 14036)
+Completed 200 OK in 27ms (Views: 24.9ms | ActiveRecord: 0.1ms | Allocations: 14862)
+
+
+Started GET "/states/%2021" for 127.0.0.1 at 2022-07-19 14:02:39 +0300
+Processing by StatesController#show as HTML
+  Parameters: {"id"=>" 21"}
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states" WHERE "states"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/states_controller.rb:42:in `set_state'
+  Rendering layout layouts/application.html.erb
+  Rendering states/show.erb within layouts/application
+  Rendered states/_state.erb (Duration: 1.1ms | Allocations: 925)
+  Rendered states/show.erb within layouts/application (Duration: 1.8ms | Allocations: 1312)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 5595)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.1ms | Allocations: 6912)
+
+
+Started GET "/states" for 127.0.0.1 at 2022-07-19 14:02:42 +0300
+Processing by StatesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/states/index.erb:4
+  [1m[36mCACHE State Load (0.0ms)[0m  [1m[34mSELECT "states".* FROM "states" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/views/states/index.erb:4
+  Rendered states/_state.erb (Duration: 9.4ms | Allocations: 6593)
+  Rendered states/index.erb within layouts/application (Duration: 10.0ms | Allocations: 6909)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 6997)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.2ms | Allocations: 7350)
+
+
+  
+ActionView::Template::Error (undefined method `body' for #<ActiveRecord::Relation [#<State id: 21, body: "kfkdkfk", author: "asdf", created_at: "2022-07-18 16:31:29.660801000 +0000", updated_at: "2022-07-18 16:31:29.660801000 +0000">, #<State id: 22, body: "asdfasdf", author: "Rafaek", created_at: "2022-07-18 20:04:17.783015000 +0000", updated_at: "2022-07-18 20:23:42.416292000 +0000">, #<State id: 23, body: "falskdfjaslkdfj", author: "fasdf", created_at: "2022-07-18 20:10:19.791148000 +0000", updated_at: "2022-07-18 20:10:19.791148000 +0000">]>):
+    1: <div class="mb-sm">
+    2:   <!--state - локальная переменная в этом паршале-->
+    3:   <%= state.body%>
+    4: </div>
+    5: 
+    6: <div class="text-sm state-footer">
+  
+app/views/states/_state.erb:3
+app/views/states/index.erb:4
+Started GET "/states" for 127.0.0.1 at 2022-07-19 14:03:28 +0300
+Processing by StatesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:4
+  Rendered collection of states/_state.erb [3 times] (Duration: 4.9ms | Allocations: 1658)
+  Rendered states/_form.erb (Duration: 2.3ms | Allocations: 935)
+  Rendered states/index.erb within layouts/application (Duration: 11.6ms | Allocations: 3965)
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | Allocations: 8268)
+Completed 200 OK in 22ms (Views: 21.1ms | ActiveRecord: 0.2ms | Allocations: 9107)
+
+
+Started GET "/states" for 127.0.0.1 at 2022-07-19 14:07:03 +0300
+Processing by StatesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:4
+  Rendered collection of states/_state.erb [3 times] (Duration: 5.8ms | Allocations: 1637)
+  Rendered collection of states/_state.erb [3 times] (Duration: 1.8ms | Allocations: 999)
+  Rendered collection of states/_state.erb [3 times] (Duration: 2.0ms | Allocations: 999)
+  Rendered states/_form.erb (Duration: 2.7ms | Allocations: 938)
+  Rendered states/index.erb within layouts/application (Duration: 17.3ms | Allocations: 6008)
+  Rendered layout layouts/application.html.erb (Duration: 26.3ms | Allocations: 10299)
+Completed 200 OK in 30ms (Views: 28.3ms | ActiveRecord: 0.2ms | Allocations: 11172)
+
+
+Started GET "/states" for 127.0.0.1 at 2022-07-19 14:07:29 +0300
+Processing by StatesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:4
+  Rendered states/_state.erb (Duration: 2.5ms | Allocations: 1298)
+  Rendered states/index.erb within layouts/application (Duration: 33.1ms | Allocations: 10382)
+  Rendered layout layouts/application.html.erb (Duration: 33.4ms | Allocations: 10476)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.2ms | Allocations: 11330)
+
+
+  
+ActionView::Template::Error (Object must be a Date, DateTime or Time object. nil given.):
+     6: <div class="text-sm state-footer">
+     7:   <div>
+     8:     <p class="text-dark-grey"><%= "Автор: '#{state.author}'" %></p>
+     9:     <p class="text-grey"><%= l(state.created_at, format: :short) %></p>
+    10:   </div>
+    11: 
+    12:   <div>
+  
+app/views/states/_state.erb:9
+app/views/states/index.erb:6
+app/views/states/index.erb:4
+Started GET "/states" for 127.0.0.1 at 2022-07-19 14:07:35 +0300
+Processing by StatesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:4
+  Rendered states/_state.erb (Duration: 1.3ms | Allocations: 932)
+  Rendered states/_state.erb (Duration: 0.6ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.3ms | Allocations: 353)
+  Rendered states/_form.erb (Duration: 2.2ms | Allocations: 936)
+  Rendered states/index.erb within layouts/application (Duration: 6.4ms | Allocations: 3957)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 8260)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.1ms | Allocations: 9128)
+
+
+Started GET "/states" for 127.0.0.1 at 2022-07-19 14:07:47 +0300
+Processing by StatesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:4
+  Rendered states/_state.erb (Duration: 3.9ms | Allocations: 928)
+  Rendered states/_state.erb (Duration: 1.9ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 1.0ms | Allocations: 353)
+  Rendered states/_form.erb (Duration: 2.6ms | Allocations: 936)
+  Rendered states/index.erb within layouts/application (Duration: 14.5ms | Allocations: 3954)
+  Rendered layout layouts/application.html.erb (Duration: 22.2ms | Allocations: 8245)
+Completed 200 OK in 26ms (Views: 24.3ms | ActiveRecord: 0.2ms | Allocations: 9120)
+
+
+Started GET "/states" for 127.0.0.1 at 2022-07-19 14:10:26 +0300
+Processing by StatesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  Rendered states/_form.erb (Duration: 3.1ms | Allocations: 1188)
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:14
+  Rendered states/_state.erb (Duration: 1.8ms | Allocations: 608)
+  Rendered states/_state.erb (Duration: 0.7ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 1.1ms | Allocations: 353)
+  Rendered states/index.erb within layouts/application (Duration: 10.8ms | Allocations: 3934)
+  Rendered layout layouts/application.html.erb (Duration: 18.2ms | Allocations: 8225)
+Completed 200 OK in 22ms (Views: 20.1ms | ActiveRecord: 0.2ms | Allocations: 9100)
+
+
+Started GET "/states" for 127.0.0.1 at 2022-07-19 14:11:11 +0300
+Processing by StatesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  Rendered states/_form.erb (Duration: 3.1ms | Allocations: 1194)
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:12
+  Rendered states/_state.erb (Duration: 1.7ms | Allocations: 608)
+  Rendered states/_state.erb (Duration: 1.1ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 2.1ms | Allocations: 353)
+  Rendered states/index.erb within layouts/application (Duration: 11.8ms | Allocations: 3936)
+  Rendered layout layouts/application.html.erb (Duration: 19.7ms | Allocations: 8227)
+Completed 200 OK in 23ms (Views: 21.4ms | ActiveRecord: 0.1ms | Allocations: 9102)
+
+
+Started GET "/states" for 127.0.0.1 at 2022-07-19 14:11:42 +0300
+Processing by StatesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  Rendered states/_form.erb (Duration: 3.6ms | Allocations: 1197)
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:15
+  Rendered states/_state.erb (Duration: 2.5ms | Allocations: 608)
+  Rendered states/_state.erb (Duration: 0.9ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.7ms | Allocations: 353)
+  Rendered states/index.erb within layouts/application (Duration: 12.4ms | Allocations: 3942)
+  Rendered layout layouts/application.html.erb (Duration: 19.9ms | Allocations: 8233)
+Completed 200 OK in 23ms (Views: 21.7ms | ActiveRecord: 0.2ms | Allocations: 9108)
+
+
+Started GET "/states" for 127.0.0.1 at 2022-07-19 14:12:24 +0300
+Processing by StatesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  Rendered states/_form.erb (Duration: 3.9ms | Allocations: 1188)
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:15
+  Rendered states/_state.erb (Duration: 1.3ms | Allocations: 608)
+  Rendered states/_state.erb (Duration: 0.4ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.3ms | Allocations: 353)
+  Rendered states/index.erb within layouts/application (Duration: 9.5ms | Allocations: 3933)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 8224)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.1ms | Allocations: 9099)
+
+
+Started GET "/states" for 127.0.0.1 at 2022-07-19 14:13:37 +0300
+Processing by StatesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  Rendered states/_form.erb (Duration: 1.3ms | Allocations: 1185)
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:15
+  Rendered states/_state.erb (Duration: 1.2ms | Allocations: 608)
+  Rendered states/_state.erb (Duration: 0.4ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.4ms | Allocations: 353)
+  Rendered states/index.erb within layouts/application (Duration: 5.5ms | Allocations: 3930)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 8221)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.1ms | Allocations: 9096)
+
+
+Started GET "/states" for 127.0.0.1 at 2022-07-19 14:13:38 +0300
+Processing by StatesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  Rendered states/_form.erb (Duration: 8.1ms | Allocations: 807)
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:15
+  Rendered states/_state.erb (Duration: 0.9ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.8ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.8ms | Allocations: 353)
+  Rendered states/index.erb within layouts/application (Duration: 13.3ms | Allocations: 2798)
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | Allocations: 6725)
+Completed 200 OK in 20ms (Views: 19.5ms | ActiveRecord: 0.2ms | Allocations: 7044)
+
+
+Started GET "/states" for 127.0.0.1 at 2022-07-19 14:14:20 +0300
+Processing by StatesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  Rendered states/_form.erb (Duration: 3.4ms | Allocations: 1197)
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:12
+  Rendered states/_state.erb (Duration: 1.7ms | Allocations: 608)
+  Rendered states/_state.erb (Duration: 0.9ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.8ms | Allocations: 353)
+  Rendered states/index.erb within layouts/application (Duration: 11.4ms | Allocations: 3944)
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | Allocations: 8239)
+Completed 200 OK in 22ms (Views: 20.7ms | ActiveRecord: 0.2ms | Allocations: 9085)
+
+
+Started GET "/states" for 127.0.0.1 at 2022-07-19 14:14:50 +0300
+Processing by StatesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  Rendered states/_form.erb (Duration: 4.1ms | Allocations: 1194)
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:14
+  Rendered states/_state.erb (Duration: 2.5ms | Allocations: 608)
+  Rendered states/_state.erb (Duration: 0.9ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.7ms | Allocations: 353)
+  Rendered states/index.erb within layouts/application (Duration: 12.8ms | Allocations: 3938)
+  Rendered layout layouts/application.html.erb (Duration: 20.5ms | Allocations: 8241)
+Completed 200 OK in 24ms (Views: 22.4ms | ActiveRecord: 0.2ms | Allocations: 9116)
+
+
+Started GET "/states" for 127.0.0.1 at 2022-07-19 14:15:10 +0300
+Processing by StatesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  Rendered states/_form.erb (Duration: 1.4ms | Allocations: 1188)
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:14
+  Rendered states/_state.erb (Duration: 1.1ms | Allocations: 608)
+  Rendered states/_state.erb (Duration: 0.3ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.2ms | Allocations: 353)
+  Rendered states/index.erb within layouts/application (Duration: 5.1ms | Allocations: 3932)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 8223)
+Completed 200 OK in 9ms (Views: 8.9ms | ActiveRecord: 0.1ms | Allocations: 9098)
+
+
+Started GET "/states" for 127.0.0.1 at 2022-07-19 14:15:27 +0300
+Processing by StatesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  Rendered states/_form.erb (Duration: 1.8ms | Allocations: 1203)
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:14
+  Rendered states/_state.erb (Duration: 1.4ms | Allocations: 608)
+  Rendered states/_state.erb (Duration: 0.4ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.3ms | Allocations: 353)
+  Rendered states/index.erb within layouts/application (Duration: 6.2ms | Allocations: 3947)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 8238)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.1ms | Allocations: 9113)
+
+
+Started GET "/states" for 127.0.0.1 at 2022-07-19 14:15:36 +0300
+Processing by StatesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  Rendered states/_form.erb (Duration: 2.8ms | Allocations: 1203)
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:14
+  Rendered states/_state.erb (Duration: 1.9ms | Allocations: 608)
+  Rendered states/_state.erb (Duration: 0.7ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.7ms | Allocations: 353)
+  Rendered states/index.erb within layouts/application (Duration: 10.6ms | Allocations: 3947)
+  Rendered layout layouts/application.html.erb (Duration: 17.8ms | Allocations: 8238)
+Completed 200 OK in 21ms (Views: 19.4ms | ActiveRecord: 0.2ms | Allocations: 9113)
+
+
+Started GET "/states" for 127.0.0.1 at 2022-07-19 14:15:49 +0300
+Processing by StatesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  Rendered states/_form.erb (Duration: 4.0ms | Allocations: 1185)
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:14
+  Rendered states/_state.erb (Duration: 1.8ms | Allocations: 608)
+  Rendered states/_state.erb (Duration: 0.6ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.8ms | Allocations: 353)
+  Rendered states/index.erb within layouts/application (Duration: 11.7ms | Allocations: 3929)
+  Rendered layout layouts/application.html.erb (Duration: 18.8ms | Allocations: 8220)
+Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 0.1ms | Allocations: 9095)
+
+
+Started GET "/states" for 127.0.0.1 at 2022-07-19 14:19:58 +0300
+Processing by StatesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  Rendered states/_form.erb (Duration: 1.4ms | Allocations: 1194)
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:14
+  Rendered states/_state.erb (Duration: 1.1ms | Allocations: 610)
+  Rendered states/_state.erb (Duration: 0.4ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.4ms | Allocations: 353)
+  Rendered states/index.erb within layouts/application (Duration: 5.3ms | Allocations: 3940)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 8231)
+Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.1ms | Allocations: 9106)
+
+
+Started GET "/states" for 127.0.0.1 at 2022-07-19 15:04:28 +0300
+Processing by StatesController#index as HTML
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/states_controller.rb:28:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  Rendered states/_form.erb (Duration: 1.5ms | Allocations: 1240)
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:14
+  Rendered states/_state.erb (Duration: 1.3ms | Allocations: 618)
+  Rendered states/_state.erb (Duration: 0.4ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.4ms | Allocations: 353)
+  Rendered states/index.erb within layouts/application (Duration: 5.9ms | Allocations: 4130)
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 22348)
+Completed 200 OK in 21ms (Views: 16.8ms | ActiveRecord: 0.4ms | Allocations: 25770)
+
+
+Started POST "/states" for 127.0.0.1 at 2022-07-19 15:04:36 +0300
+Processing by StatesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "state"=>{"body"=>"test1", "author"=>"1"}, "commit"=>"Сохранить"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/states_controller.rb:5:in `create'
+  [1m[36mState Create (0.4ms)[0m  [1m[32mINSERT INTO "states" ("body", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "test1"], ["author", "1"], ["created_at", "2022-07-19 12:04:36.798267"], ["updated_at", "2022-07-19 12:04:36.798267"]]
+  ↳ app/controllers/states_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/states_controller.rb:5:in `create'
+Redirected to http://localhost:3000/states.24
+Completed 302 Found in 14ms (ActiveRecord: 6.4ms | Allocations: 3567)
+
+
+Started GET "/states.24" for 127.0.0.1 at 2022-07-19 15:04:36 +0300
+Processing by StatesController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  Rendered states/_form.erb (Duration: 2.0ms | Allocations: 881)
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:14
+  Rendered states/_state.erb (Duration: 1.0ms | Allocations: 362)
+  Rendered states/_state.erb (Duration: 0.8ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.8ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.8ms | Allocations: 353)
+  Rendered states/index.erb within layouts/application (Duration: 8.9ms | Allocations: 3372)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 7414)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.2ms | Allocations: 7824)
+
+
+Started GET "/states.24" for 127.0.0.1 at 2022-07-19 15:04:36 +0300
+Processing by StatesController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  Rendered states/_form.erb (Duration: 2.0ms | Allocations: 780)
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:14
+  Rendered states/_state.erb (Duration: 1.0ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.8ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.7ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.8ms | Allocations: 353)
+  Rendered states/index.erb within layouts/application (Duration: 9.4ms | Allocations: 3209)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 7146)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.2ms | Allocations: 7432)
+
+
+Started POST "/states" for 127.0.0.1 at 2022-07-19 15:08:31 +0300
+Processing by StatesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "state"=>{"body"=>"wtest", "author"=>"w"}, "commit"=>"Сохранить"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/states_controller.rb:5:in `create'
+  [1m[36mState Create (0.4ms)[0m  [1m[32mINSERT INTO "states" ("body", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "wtest"], ["author", "w"], ["created_at", "2022-07-19 12:08:31.976453"], ["updated_at", "2022-07-19 12:08:31.976453"]]
+  ↳ app/controllers/states_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (13.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/states_controller.rb:5:in `create'
+Redirected to http://localhost:3000/states.25
+Completed 302 Found in 20ms (ActiveRecord: 13.7ms | Allocations: 2251)
+
+
+Started GET "/states.25" for 127.0.0.1 at 2022-07-19 15:08:32 +0300
+Processing by StatesController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  Rendered states/_form.erb (Duration: 3.0ms | Allocations: 1192)
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:14
+  Rendered states/_state.erb (Duration: 2.2ms | Allocations: 608)
+  Rendered states/_state.erb (Duration: 0.8ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.7ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.7ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.8ms | Allocations: 353)
+  Rendered states/index.erb within layouts/application (Duration: 13.8ms | Allocations: 4810)
+  Rendered layout layouts/application.html.erb (Duration: 32.2ms | Allocations: 9191)
+Completed 200 OK in 36ms (Views: 34.6ms | ActiveRecord: 0.2ms | Allocations: 10133)
+
+
+Started GET "/states.25" for 127.0.0.1 at 2022-07-19 15:08:32 +0300
+Processing by StatesController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  Rendered states/_form.erb (Duration: 2.0ms | Allocations: 792)
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:14
+  Rendered states/_state.erb (Duration: 1.0ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 1.1ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.9ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.4ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.3ms | Allocations: 353)
+  Rendered states/index.erb within layouts/application (Duration: 8.9ms | Allocations: 3659)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 7587)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.2ms | Allocations: 7903)
+
+
+Started GET "/states.25" for 127.0.0.1 at 2022-07-19 15:13:33 +0300
+Processing by StatesController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  Rendered states/_form.erb (Duration: 0.9ms | Allocations: 792)
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:14
+  Rendered states/_state.erb (Duration: 0.4ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.4ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.3ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.3ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.2ms | Allocations: 353)
+  Rendered states/index.erb within layouts/application (Duration: 4.1ms | Allocations: 3658)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 17102)
+Completed 200 OK in 15ms (Views: 15.0ms | ActiveRecord: 0.1ms | Allocations: 17388)
+
+
+Started POST "/states" for 127.0.0.1 at 2022-07-19 15:13:39 +0300
+Processing by StatesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "state"=>{"body"=>"lafd", "author"=>"asdf"}, "commit"=>"Сохранить"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/states_controller.rb:5:in `create'
+  [1m[36mState Create (0.2ms)[0m  [1m[32mINSERT INTO "states" ("body", "author", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "lafd"], ["author", "asdf"], ["created_at", "2022-07-19 12:13:39.246668"], ["updated_at", "2022-07-19 12:13:39.246668"]]
+  ↳ app/controllers/states_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/states_controller.rb:5:in `create'
+Redirected to http://localhost:3000/states.26
+Completed 302 Found in 9ms (ActiveRecord: 5.5ms | Allocations: 2318)
+
+
+Started GET "/states.26" for 127.0.0.1 at 2022-07-19 15:13:39 +0300
+Processing by StatesController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  Rendered states/_form.erb (Duration: 0.8ms | Allocations: 805)
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:14
+  Rendered states/_state.erb (Duration: 0.5ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.5ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.5ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.3ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.3ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.3ms | Allocations: 353)
+  Rendered states/index.erb within layouts/application (Duration: 5.0ms | Allocations: 4108)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 8230)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.1ms | Allocations: 8517)
+
+
+Started GET "/states.26" for 127.0.0.1 at 2022-07-19 15:13:39 +0300
+Processing by StatesController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  Rendered states/_form.erb (Duration: 1.8ms | Allocations: 813)
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:14
+  Rendered states/_state.erb (Duration: 0.9ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.9ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.5ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.6ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.8ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.8ms | Allocations: 353)
+  Rendered states/index.erb within layouts/application (Duration: 10.3ms | Allocations: 4117)
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 8227)
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.2ms | Allocations: 8513)
+
+
+Started GET "/states.26" for 127.0.0.1 at 2022-07-19 15:15:26 +0300
+Processing by StatesController#index as */*
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/states_controller.rb:28:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  Rendered states/_form.erb (Duration: 1.6ms | Allocations: 1237)
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:14
+  Rendered states/_state.erb (Duration: 1.1ms | Allocations: 617)
+  Rendered states/_state.erb (Duration: 0.3ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.3ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.5ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.3ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.3ms | Allocations: 353)
+  Rendered states/index.erb within layouts/application (Duration: 7.1ms | Allocations: 5438)
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | Allocations: 23893)
+Completed 200 OK in 23ms (Views: 18.9ms | ActiveRecord: 0.8ms | Allocations: 27794)
+
+
+Started GET "/states.26" for 127.0.0.1 at 2022-07-19 15:16:24 +0300
+Processing by StatesController#index as */*
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/states_controller.rb:28:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  Rendered states/_form.erb (Duration: 1.0ms | Allocations: 1031)
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:14
+  Rendered states/_state.erb (Duration: 0.6ms | Allocations: 411)
+  Rendered states/_state.erb (Duration: 0.5ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.3ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.3ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.3ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.3ms | Allocations: 353)
+  Rendered states/index.erb within layouts/application (Duration: 5.7ms | Allocations: 4676)
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | Allocations: 22854)
+Completed 200 OK in 24ms (Views: 19.8ms | ActiveRecord: 0.6ms | Allocations: 26296)
+
+
+Started GET "/states.26" for 127.0.0.1 at 2022-07-19 15:17:00 +0300
+Processing by StatesController#index as */*
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/states_controller.rb:28:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  Rendered states/_form.erb (Duration: 1.0ms | Allocations: 1025)
+  [1m[36mState Load (0.2ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:14
+  Rendered states/_state.erb (Duration: 0.8ms | Allocations: 411)
+  Rendered states/_state.erb (Duration: 0.4ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.3ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.4ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.3ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.3ms | Allocations: 353)
+  Rendered states/index.erb within layouts/application (Duration: 5.1ms | Allocations: 4670)
+  Rendered layout layouts/application.html.erb (Duration: 63.0ms | Allocations: 22879)
+Completed 200 OK in 68ms (Views: 63.6ms | ActiveRecord: 0.7ms | Allocations: 26382)
+
+
+Started GET "/states.26" for 127.0.0.1 at 2022-07-19 15:18:05 +0300
+Processing by StatesController#index as */*
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/states_controller.rb:28:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering states/index.erb within layouts/application
+  Rendered states/_form.erb (Duration: 1.0ms | Allocations: 1040)
+  [1m[36mState Load (0.1ms)[0m  [1m[34mSELECT "states".* FROM "states"[0m
+  ↳ app/views/states/index.erb:14
+  Rendered states/_state.erb (Duration: 0.7ms | Allocations: 411)
+  Rendered states/_state.erb (Duration: 0.3ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.3ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.3ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.4ms | Allocations: 353)
+  Rendered states/_state.erb (Duration: 0.4ms | Allocations: 353)
+  Rendered states/index.erb within layouts/application (Duration: 5.4ms | Allocations: 4685)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 22857)
+Completed 200 OK in 19ms (Views: 15.0ms | ActiveRecord: 0.6ms | Allocations: 26322)
+
+

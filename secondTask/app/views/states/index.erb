@@ -1,10 +1,18 @@
 <div class="container">
-  <h2 class="title-lg mb">Статьи</h2>
+  <p class="mt"><%= link_to "Создать новую статью", new_state_path, class: 'button button-main' %>
+  </p>
 
-  <% @states.each do |state| %>
-    <p class="mb-sm"><%= link_to "Вопрос #{state.id}", "/states/ #{state.id}" %></p>
-  <% end %>
-
-  <p class="mt"><%= link_to "Создать новый вопрос", new_state_path, class:'button button-main' %>
+  <p class="mt">
+    <%= render 'form', state: @state %>
   </p>
 </div>
+
+<div class="container mt-sm">
+  <h2 class="title-lg">Все статьи</h2>
+</div>
+
+<% @states.each do |state| %>
+  <div class="mt-sm container">
+    <%= render state %>
+  </div>
+<% end %>

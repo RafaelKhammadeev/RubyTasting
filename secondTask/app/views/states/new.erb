@@ -1,13 +1,7 @@
 <div class="container">
-  <h2 class="title-lg mb">Новый вопрос</h2>
-  <!--создали с помощью form_with-->
-  <%= form_with model: @state do |form|%>
-    <p><%= form.label :body, "Текст статьи"%></p>
-    <p class="mt"><%= form.text_area :body, rows: 5, class: 'form-text-area' %></p>
+  <h2 class="title-lg mb">Новая статья</h2>
 
-    <p><%= form.label :author %></p>
-    <p><%= form.text_field :author, class: 'form-text-field' %></p>
-
-    <p class="mt"><%= form.submit "Создать", class:'button button-main'%></p>
-  <% end %>
+  <!--вызываем паршал специальным метод render-->
+  <!--нипишем путь так как он находиться в той же папке-->
+  <%= render 'form', state: @state %>
 </div>
