@@ -4,16 +4,18 @@
 class Raspberry
   @states = { 0 => 'Отсутствует', 1 => 'Цветение', 2 => 'Зеленая', 3 => 'Красная' }
 
+  attr_reader :state
+
   def initialize(index = 0, state = 0)
     @index = index
     # state > 3 ? @state = 3 : @state = state
     @state = state > 3 ? 3 : state
   end
 
-  # @return [Integer]
-  def get_state
-    @state
-  end
+  # attr_reader @state - это заменяет данную функию
+  # def get_state
+  #   @state
+  # end
 
   def grow!
     # если статус меньше 3(максимально созревшая), то она вырастает на +1
@@ -35,7 +37,9 @@ class RaspberryBash
   end
 
   def get_raspberries
-    puts @raspberries.to_s
+    # сразу переводит в стринг
+    puts @raspberries
+    # puts @raspberries.to_s
   end
 
   def grow_all!
@@ -49,7 +53,7 @@ class RaspberryBash
 
   def give_away_all!
     # Функцию удаления элементов nil массива выполняет метод .compact например:
-    @raspberries.map { |raspberries| raspberries.get_state == 3 ? nil : raspberries }.compact
+    @raspberries = @raspberries.map { |raspberries| raspberries.state == 3 ? nil : raspberries }.compact
   end
 end
 
@@ -81,6 +85,8 @@ end
 
 if __FILE__ == $PROGRAM_NAME
   Human.knowledge_base
+  r1 = Raspberry.new
+  puts r1.state
 
   puts "\n"
   raspberry_bash = RaspberryBash.new(5)
@@ -92,5 +98,7 @@ if __FILE__ == $PROGRAM_NAME
 
   puts "\n"
   user.harvest
+  raspberry_bash = raspberry_bash.get_raspberries
+  raspberry_bash.class
 end
 #
