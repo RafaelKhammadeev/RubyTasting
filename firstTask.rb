@@ -48,3 +48,4 @@ end
 arr = LookAndSay.new(6, 1)
 arr.run
 arr.show
+#
